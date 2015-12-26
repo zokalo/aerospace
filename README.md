@@ -27,8 +27,10 @@ $ sudo python setup.py install --no-fortran
 ```
 ###NumPy
 On unix it reqiures packages to be preinstalled:
-*build-essential
-*python-dev
+
+* build-essential
+* python-dev
+
 ###Matplotlib
 If you have obtained MemoryError:
 ```bash

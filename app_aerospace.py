@@ -17,6 +17,12 @@ if app_path + '/some_app_packeges' not in sys.path:
 #импортируем что надо
 from aerospace import launch
 """
+import os
+import sys
+app_path = os.path.dirname(__file__)
+if app_path not in sys.path:
+    sys.path.append(app_path)
+
 import balloon
 
 
