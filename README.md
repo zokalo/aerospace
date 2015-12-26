@@ -55,5 +55,6 @@ See docstrings for more information about functions and classes.
 * **v0.1 (2015-12-26)**
     * Added first model:
         - balloon free lift process.
+        
 ## License
 GPL v3.0 License. See the LICENSE file.
