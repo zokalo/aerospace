@@ -1,5 +1,6 @@
 import sys
-from setuptools import setup, find_packages
+# from setuptools import setup
+from distutils.core import setup
 from aerospace.version import version
 
 py_version = sys.version_info[:2]
@@ -8,9 +9,9 @@ if not py_version == (2, 7):
                        ' ({}.{} detected).'.format(*py_version))
 
 setup(
-    name='aerospace',
+    name='Aerospace',
     version=version,
-    packages=find_packages(),
+    packages=['aerospace'],
     install_requires=[
         'matplotlib>=1.4.2',
         'numpy>=1.9.1',

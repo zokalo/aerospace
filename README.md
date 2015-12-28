@@ -32,7 +32,7 @@ $ sudo python setup.py install
 If you face problems with requirements try to find solution in the next
 subsections.
 
-###Odespy
+**Odespy**
 
 If you obtain an error:
 
@@ -56,7 +56,7 @@ Fortran code (see Odespy [README](https://github.com/hplgit/odespy/blob/master/R
 $ sudo python setup.py install --no-fortran
 ```
 
-###NumPy
+**NumPy**
 
 On Unix NumPy reqiures packages to be preinstalled:
 
@@ -68,7 +68,7 @@ Good solution for Windows the NumPy installer for your Python version from the
 installer includes binaries for different CPU’s (without SSE instructions, 
 with SSE2 or with SSE3) and installs the correct one automatically.
 
-###Matplotlib
+**Matplotlib**
 
 If you have obtained MemoryError:
 
