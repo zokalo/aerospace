@@ -19,6 +19,7 @@ import const
 import gas
 import material
 import isa
+import utils
 
 
 class BalloonStatic(object):
@@ -473,7 +474,7 @@ def model_free_lift(duration,
 
             # Построение графика
             matplotlib.rcParams['font.size'] = 14
-            matplotlib.rcParams['font.family'] = 'DejaVu Sans'
+            matplotlib.rcParams['font.family'] = utils.get_font()
             matplotlib.rcParams["axes.grid"] = True
             plt.figure()
 

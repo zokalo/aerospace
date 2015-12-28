@@ -4,10 +4,12 @@ dynamic math-models for aerospace computations.
 The user specifies the problem through high-level
 Python code.
 """
+# Import only high-level interface.
 import balloon
-import const
-import gas
-import isa
-import material
+# import const
+# import gas
+# import isa
+# import material
 import rocket
+# import utils
 
