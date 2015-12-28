@@ -38,7 +38,7 @@ If you obtain an error:
 
 
 ```bash
-\error: library _odepack has Fortran sources but no Fortran compiler found
+error: library _odepack has Fortran sources but no Fortran compiler found
 ```
 
 install Fortran compiler, i.e.:
@@ -77,7 +77,7 @@ If you have obtained MemoryError:
 $ pip install --no-cache-dir matplotlib
 ```
 
-If you have error:
+If on Unix you have obtained the nex message:
 
 
 ```bash
@@ -85,18 +85,13 @@ The following required packages can not be built:
                             * freetype, png
 ```
 
-on unix install packages:
+install packages:
 
 
 ```bash
 $ sudo apt-get install libfreetype6-dev libpng12-dev
 $ sudo apt-get install pkg-config
 ```
-
-## Usage
-
-Use interface functions from app_aerospace.py.
-See docstrings for more information about functions and classes.
 
 ## History
 
