@@ -13,8 +13,8 @@ material/
     rel_strain_max [] - предел относительной деформации
 """
 # Modules of package to import
+import rubber
 __all__ = ['rubber', ]
-from . import rubber
 
 # Global materials names
 # used to import specified gas properties, i.e.

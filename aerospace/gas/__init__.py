@@ -10,8 +10,8 @@ gas/
     mu [кг/моль] - молярная масса
 """
 # Modules of package to import
+import helium
 __all__ = ['helium', ]
-from . import helium
 
 # Global gas names
 # used to import specified gas properties, i.e.
