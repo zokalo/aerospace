@@ -29,7 +29,8 @@ $ cd aerospace
 $ sudo python setup.py install
 ```
 
-If you face problems with requirements read the next subsections.
+If you face problems with requirements try to find solution in the next
+subsections.
 
 ###Odespy
 
@@ -57,12 +58,15 @@ $ sudo python setup.py install --no-fortran
 
 ###NumPy
 
-On Unix it reqiures packages to be preinstalled:
+On Unix NumPy reqiures packages to be preinstalled:
 
 * build-essential
 * python-dev
 
-On Windows 
+Good solution for Windows the NumPy installer for your Python version from the
+[Sourceforge](http://sourceforge.net/projects/numpy/files/NumPy/). The NumPy 
+installer includes binaries for different CPU’s (without SSE instructions, 
+with SSE2 or with SSE3) and installs the correct one automatically.
 
 ###Matplotlib
 
