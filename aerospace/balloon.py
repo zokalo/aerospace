@@ -267,6 +267,7 @@ def model_free_lift(duration,
                     bal_gas='helium',
                     payload=0,
                     plot_show=False, plot_save_as='',
+                    show_debug_msg=False,
                     ):
     """ Моделирование процесса свободного подъёма для шара с полезной нагрузкой
 
@@ -286,6 +287,7 @@ def model_free_lift(duration,
     :param plot_show:     True/False отображение графика процесса
     :param plot_save_as:  путь к сохраняемому файлу графика, с расширением.
                           '' - пустая строка - не сохранять изображение
+    :param show_debug_msg: отображать отладочные сообщения выводом print()
     ---------------------------------------------------------------------------
     :return:              exit_status:
                           0 - успешное завршение
@@ -300,7 +302,8 @@ def model_free_lift(duration,
     ...                 bal_diam=2.164,
     ...                 payload=1.05,
     ...                 plot_save_as='doctest.png',
-    ...                 plot_show=False)
+    ...                 plot_show=True,
+    ...                 show_debug_msg=True)
     Called function:
         model_free_lift(
             duration=10800,
@@ -309,8 +312,9 @@ def model_free_lift(duration,
             bal_mat=rubber,
             bal_gas=helium,
             payload=1.05,
-            plot_show=False,
-            plot_save_as=doctest.png)
+            plot_show=True,
+            plot_save_as=doctest.png,
+            show_debug_msg=True)
     RK4 terminated at t=7018
     Successfull end.
     0
@@ -321,35 +325,26 @@ def model_free_lift(duration,
     ...           'payload': 1.05,
     ...           'plot_save_as': 'doctest.png'}
     >>> model_free_lift(**kwargs)
-    Called function:
-        model_free_lift(
-            duration=10800,
-            bal_mass=3.0,
-            bal_diam=2.164,
-            bal_mat=rubber,
-            bal_gas=helium,
-            payload=1.05,
-            plot_show=False,
-            plot_save_as=doctest.png)
     RK4 terminated at t=7018
-    Successfull end.
     0
 
     """
     # Send inputs to log
-    log_msg = "Called function:\n" \
-              "    model_free_lift(\n" \
-              "        duration={0},\n" \
-              "        bal_mass={1},\n" \
-              "        bal_diam={2},\n" \
-              "        bal_mat={3},\n" \
-              "        bal_gas={4},\n" \
-              "        payload={5},\n" \
-              "        plot_show={6},\n" \
-              "        plot_save_as={7})".\
-        format(duration, bal_mass, bal_diam, bal_mat, bal_gas,
-               payload, plot_show, plot_save_as)
-    print(log_msg)
+    if show_debug_msg:
+        log_msg = "Called function:\n" \
+                  "    model_free_lift(\n" \
+                  "        duration={0},\n" \
+                  "        bal_mass={1},\n" \
+                  "        bal_diam={2},\n" \
+                  "        bal_mat={3},\n" \
+                  "        bal_gas={4},\n" \
+                  "        payload={5},\n" \
+                  "        plot_show={6},\n" \
+                  "        plot_save_as={7},\n" \
+                  "        show_debug_msg={8})".\
+            format(duration, bal_mass, bal_diam, bal_mat, bal_gas,
+                   payload, plot_show, plot_save_as, show_debug_msg)
+        print(log_msg)
 
     # Create ODE-function for model
     def odefun(y, time, balloon, payload):
@@ -426,7 +421,8 @@ def model_free_lift(duration,
         # Create solver (Runge-Kutta, 4th order)
         solver = odespy.RK4(
             odefun,
-            f_args=(balloon, payload))
+            f_args=(balloon, payload),
+            rtol=1E-2)
         solver.set_initial_condition([0, 0])
         y_sln, time = solver.solve(
             time_points,
@@ -502,7 +498,8 @@ def model_free_lift(duration,
     else:
         warnings.warn("All output's disabled.")
 
-    print('Successfull end.')
+    if show_debug_msg:
+        print('Successfull end.')
     return 0
 
 
