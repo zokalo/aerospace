@@ -393,15 +393,11 @@ def model_free_lift(duration,
             raise ValueError('payload must be non-negative')
 
         # Define material
-        if bal_mat in material.__all__:
-            bal_mat = 'material.' + bal_mat
-        else:
+        if not (bal_mat in material.__all__):
             raise ValueError("Unknown balloon material name ", bal_mat)
 
         # Define gas
-        if bal_gas in gas.__all__:
-            bal_gas = 'gas.' + bal_gas
-        else:
+        if not (bal_gas in gas.__all__):
             raise ValueError("Unknown gas name ", bal_gas)
     except ValueError as err:
         print(err, file=sys.stderr)
@@ -413,8 +409,8 @@ def model_free_lift(duration,
         balloon = BalloonStatic(
             bal_mass=bal_mass,
             bal_diam=bal_diam,
-            bal_mat=bal_mat,
-            gas=bal_gas)
+            bal_mat=material.BY_NAME[bal_mat],
+            gas=gas.BY_NAME[bal_gas])
     except Exception as err:
         print(err, file=sys.stderr)
         return 2

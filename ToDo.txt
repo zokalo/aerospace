@@ -3,6 +3,7 @@
 Add pre-release:
 * **v0.1.1 (2015-12-??)**
     * package became installable (added setup.py)
+    * platform-dependent unicode fonts for plot
 
 сделать предустановки параметров шаров - словари с предопредедлёнными аргументами именованные по маркам шаров
 

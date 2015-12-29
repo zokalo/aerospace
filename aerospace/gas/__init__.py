@@ -15,5 +15,12 @@ __all__ = ['helium', ]
 
 # Global gas names
 # used to import specified gas properties, i.e.
-# >>> gas = importlib.import_module(gas.HELIUM)
-HELIUM = 'gas.helium'
+# >>> gas = importlib.import_module(aerospace.gas.HELIUM)
+HELIUM = 'aerospace.gas.helium'
+
+# Gas names dictionary
+# used to import specified gas properties, i.e.
+# >>> gas = importlib.import_module(aerospace.gas.BY_NAME['helium'])
+BY_NAME = {
+    'helium': HELIUM,
+}

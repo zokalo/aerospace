@@ -18,5 +18,12 @@ __all__ = ['rubber', ]
 
 # Global materials names
 # used to import specified gas properties, i.e.
-# >>> mat = material.import_module(material.RUBBER)
-RUBBER = 'material.rubber'
+# >>> mat = importlib.import_module(aerospace.material.RUBBER)
+RUBBER = 'aerospace.material.rubber'
+
+# Material names dictionary
+# used to import specified gas properties, i.e.
+# >>> mat = importlib.import_module(aerospace.material.BY_NAME['rubber'])
+BY_NAME = {
+    'rubber': RUBBER,
+}
