@@ -10,6 +10,6 @@ import balloon
 # import gas
 # import isa
 # import material
+import platform
 import rocket
 # import utils
-

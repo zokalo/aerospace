@@ -2,6 +2,7 @@
 Low-level utilities for ``aerospace`` package
 """
 import sys
+import math
 
 
 def get_font():
@@ -21,3 +22,19 @@ def get_font():
         # Fallback - another platform
         fontname = 'Arial'
     return fontname
+
+
+def cart2pol(x, y):
+    """ Convert cartesian coordinates to polar
+    """
+    theta = math.atan2(y, x)
+    rho = math.sqrt(x**2 + y**2)
+    return theta, rho
+
+
+def pol2cart(theta, rho):
+    """ Convert polar coordinates to cartesian
+    """
+    x = rho * math.sin(theta)  # turn radial grid points into (x, y)
+    y = rho * math.cos(theta)
+    return x, y

@@ -98,7 +98,11 @@ $ sudo apt-get install pkg-config
 * **v0.1 (2015-12-26)**
     * Added first model:
         - balloon free lift process.
-       
+* **v0.2 (2016-01-10)**
+    * package became installable (added setup.py)
+    * platform-dependent unicode fonts for plot
+    * added design function for N-gon platform with balloons at corners
+
 ## License
 
 GPL v3.0 License. See the LICENSE file.
