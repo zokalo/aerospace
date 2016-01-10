@@ -4,7 +4,7 @@
 Все единицы в [СИ]
 """
 # Standard libs:
-from __future__ import print_function as print_function
+from __future__ import print_function
 import importlib
 import math
 import sys
